@@ -37,12 +37,12 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var express = require("express");
-var dosearch_1 = require("../src/dosearch");
+var dosearch_1 = require("../modules/dosearch");
 // Create a new express app instance
 var app = express();
 app.get("/", function (req, res) {
     return __awaiter(this, void 0, void 0, function () {
-        var search, enSearch, jpSearch, result, response;
+        var search, enSearch, jpSearch, result;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
@@ -55,10 +55,6 @@ app.get("/", function (req, res) {
                     jpSearch = _a.sent();
                     enSearch.push.apply(enSearch, jpSearch);
                     result = search.SortAndTrim(enSearch, jpSearch);
-                    response = "";
-                    result.forEach(function (res) {
-                        response += "Size: " + res.size + "    Title: " + res.title + "    Lang: " + res.lang + "\n";
-                    });
                     res.send(result);
                     return [2 /*return*/];
             }

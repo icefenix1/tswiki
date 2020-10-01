@@ -1,4 +1,4 @@
-import { Search } from "../models/search";
+import { Search } from "./search";
 
 
 export class SearchResponse {

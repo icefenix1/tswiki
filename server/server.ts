@@ -1,5 +1,5 @@
 import express = require("express");
-import { DoSearch } from '../src/dosearch';
+import { DoSearch } from '../modules/dosearch';
 
 // Create a new express app instance
 const app: express.Application = express();
@@ -12,14 +12,6 @@ app.get("/", async function (req, res) {
     enSearch.push(...jpSearch);
 
     var result = search.SortAndTrim(enSearch,jpSearch);
-
-
-
-    let response = "";
-
-    result.forEach(res => {
-        response += "Size: "+res.size+"    Title: "+res.title+"    Lang: "+res.lang+"\n";
-    });
 
     res.send(result);
 });
